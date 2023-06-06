@@ -143,7 +143,7 @@ def init_tf(config_dict: dict = None) -> None:
     if tf_random_seed == "auto":
         tf_random_seed = np.random.randint(1 << 31)
     if tf_random_seed is not None:
-        tf.set_random_seed(tf_random_seed)
+        tf.compat.v1.set_random_seed(tf_random_seed)
 
     # Setup environment variables.
     for key, value in cfg.items():
